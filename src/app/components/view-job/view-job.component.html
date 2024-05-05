@@ -1,0 +1,25 @@
+<a href="/jobs" class="job-search">← Job Search</a>
+<div class="container">
+     <div class="job-details">
+          <p>Job details</p>
+          <h1>{{job.title}}</h1>
+          <div [innerHTML]="description"></div>
+     </div>
+     <div class="company-card">
+          <img class="logo" src="{{job.companyLogo}}" alt="">
+          <p>{{job.companyName}}</p>
+          <button>Apply for this job</button>
+          <p>share this job</p>
+          <div>
+               <a href="">
+                    <img hr src="https://d2x33it9a58aqn.cloudfront.net/images/fb.svg?60f610889539978e421b1238e5b7d4f8"
+                         alt="Facebook"></a>
+               <a href=""> <img
+                         src="https://d2x33it9a58aqn.cloudfront.net/images/in.svg?0f3bc4cc4766c902551468d50b8956b9"
+                         alt="Linkedln"></a>
+               <a href=""><img
+                         src="https://d2x33it9a58aqn.cloudfront.net/images/tw.svg?cbe99b7e72ffe99e3ebcfd9c8c2db52e"
+                         alt="Twiiter(X)"></a>
+          </div>
+     </div>
+</div>

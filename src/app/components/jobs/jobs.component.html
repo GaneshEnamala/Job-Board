@@ -1,0 +1,15 @@
+<div class="job-card-container">
+  <p class="allJobs">All Jobs</p>
+  <ng-container *ngFor="let job of jobs">
+    <div class="job-card" (click)="viewJobDetails(job)">
+      <img [src]="job.companyLogo" alt="Company Logo" class="company-logo">
+      <div class="job-details">
+        <div class="job-title">{{ job.title }}</div>
+        <div class="job-company-location">{{ job.companyName }}, {{ job.location }}</div>
+        <!-- <div class="job-departments">{{ job.departments.join(', ') }}</div> -->
+      </div>
+      <button class="view-job-button" (click)="viewJobDetails(job)">View Job</button>
+    </div>    
+  </ng-container>
+  <button class="load-more-button" (click)="loadJobs()">Load More Jobs</button>
+</div>

@@ -1,0 +1,84 @@
+.allJobs{
+  display: flex;
+  margin-left: -15%;
+  font-size: large;
+}
+
+.job-card-container {
+  display: inline-block;
+  flex-direction: column; /* Stack cards vertically */
+}
+
+.job-card {
+  display: flex;
+  align-items: center;
+  margin-left: -100px;
+  margin-bottom: 20px;
+  width: 700px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.job-card:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.company-logo {
+  width: 8%;
+  margin-right: 10px;
+}
+
+.job-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: -20px;
+}
+
+.job-company-location {
+  font-size: 14px;
+  margin-bottom: 5px;
+  position: absolute;
+}
+
+/* .job-departments {
+  font-style: italic;
+  margin-bottom: 10px;
+} */
+
+.view-job-button {
+  display: none;
+  background-color: #1976d2;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  position: absolute; /* Position the button absolutely */
+  right: 20px; /* Align the button to the right edge */
+}
+
+.job-card:hover .view-job-button {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.view-job-button:hover {
+ opacity: 0.8;
+}
+
+.load-more-button {
+  background-color: #1976d2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.load-more-button:hover {
+  opacity: 0.8;
+}
+

@@ -1,0 +1,60 @@
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: start; /* Align items to the left */
+  background-color: #1976d2;
+  color: white;
+  font-weight: bold; /* changed from 1000 to bold for better cross-browser compatibility */
+  font-size: large;
+  padding: 0 20px; /* Added padding for better spacing */
+}
+
+.toolbar img {
+  width: 40px; /* Image size */
+  vertical-align: middle; /* Align the image vertically with text */
+  margin-right: 10px; /* Space between the image and the text */
+}
+
+.title-tag {
+  display: inline-flex; /* Align image and text side by side */
+  align-items: center; /* Center align image and text vertically */
+  color: white;
+  text-decoration: none;
+}
+
+.spacer, .space {
+  flex-grow: 0.3; /* Adjust flex-grow to push navigation to the right */
+}
+
+.links {
+  margin: 0 10px; /* Consistent margin around links */
+  color: white;
+  text-decoration: none;
+}
+
+.links:hover {
+  opacity: 0.8;
+}
+
+.main-content {
+  padding-top: 80px; /* Adjust according to the height of your toolbar */
+  text-align: center; /* Centers the text */
+  width: 100%; /* Ensure it takes full width */
+  min-height: calc(100vh - 80px); /* Subtract the toolbar height from the viewport height */
+  box-sizing: border-box; /* Includes padding in height calculation */
+}
+
