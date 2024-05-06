@@ -1,0 +1,104 @@
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.controls {
+  text-align: center;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Ensures spacing between the button and the input */
+}
+
+.controls input, .controls button {
+  padding: 5px;
+  font-size: 16px; /* Ensures text is easily readable */
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive cards */
+  gap: 20px; /* Space between cards */
+  padding: 20px; /* Padding around the grid */
+}
+
+.company-card {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+}
+
+.company-logo {
+  width: 100px; /* Adjust based on your design */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+
+.company-details {
+  text-align: center;
+}
+
+.company-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.job-count {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Existing CSS */
+
+/* Media Query for Tablets and Mobile Devices */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px; /* Adjust font size for better readability */
+    margin-bottom: 10px; /* Reduce margin for better spacing */
+    margin-top: 30%;
+  }
+
+  .controls {
+    flex-direction: column; /* Stack controls vertically */
+    align-items: center; /* Center items horizontally */
+    margin-bottom: 20px; /* Increase margin for better spacing */
+  }
+
+  .controls input, .controls button {
+    width: 100%; /* Full width for mobile */
+  }
+
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust card layout for smaller screens */
+    gap: 10px; /* Reduce gap between cards for better spacing */
+    padding: 10px; /* Reduce padding for better space utilization */
+  }
+
+  .company-card {
+    padding: 10px; /* Reduce padding for better spacing */
+  }
+
+  .company-logo {
+    width: 80px; /* Adjust logo size for better visibility */
+    margin-bottom: 5px; /* Reduce margin for better spacing */
+  }
+
+  .company-details {
+    margin-bottom: 5px; /* Reduce margin for better spacing */
+  }
+
+  .company-name {
+    font-size: 16px; /* Adjust font size for better readability */
+  }
+
+  .job-count {
+    font-size: 14px; /* Adjust font size for better readability */
+  }
+}
+
+/* End of Media Query */

@@ -60,3 +60,52 @@ button:hover {
   display: flex;
   justify-content: space-around; /* Evenly space out social media icons */
 }
+
+/* Existing CSS */
+
+/* Media Query for Tablets and Mobile Devices */
+@media (max-width: 768px) {
+  .job-search {
+    left: 10%; /* Adjust position for better alignment on smaller screens */
+    margin-top: 30%;
+  }
+
+  .container {
+    flex-direction: column; /* Stack items vertically */
+    padding: 50px; /* Adjust padding for better spacing */
+    text-align: center; /* Center text */
+    margin-top: 20%; /* Adjust margin for better alignment */
+  }
+
+  .job-details {
+    width: 100%; /* Full width for mobile */
+    margin-left: 0; /* Reset margin */
+    margin-top: 20px; /* Adjust margin for better spacing */
+    text-align: left;
+  }
+
+  .company-card {
+    width: 80%; /* Adjust width for better fit on smaller screens */
+    margin: 20px auto; /* Center card */
+  }
+
+  .logo {
+    width: 80px; /* Adjust logo size for better visibility */
+  }
+
+  button {
+    width: 80%; /* Adjust button width for better fit on smaller screens */
+  }
+
+  .company-card p:nth-of-type(2)::before {
+    margin-bottom: 5px; /* Reduce space below the line */
+  }
+
+  /* Social media links */
+  .company-card div {
+    flex-direction: row; /* Stack social media icons vertically */
+    gap: 10px; /* Add gap between icons */
+  }
+}
+
+/* End of Media Query */

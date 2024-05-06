@@ -58,3 +58,81 @@
   box-sizing: border-box; /* Includes padding in height calculation */
 }
 
+.search-container {
+  display: flex;
+  justify-content: center; /* Center the contents horizontally */
+  padding: 20px;
+  position: absolute;
+  left: 400px;
+  top: 200px;
+  background-color: #e12424; /* A light background for the search area */
+}
+
+.search-input {
+  padding: 10px;
+  margin-right: 10px; /* Space between inputs and the button */
+  border: 2px solid #1976d2; /* Border color to match the toolbar */
+  border-radius: 5px; /* Rounded corners for the input fields */
+  font-size: 16px; /* Larger text for better readability */
+  width: 200px; /* Fixed width, adjust as needed */
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #1976d2; /* Matching the toolbar's color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; /* Cursor changes to pointer when hovered */
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.search-button:hover {
+  background-color: #145ca8; /* Slightly darker on hover for better UI interaction */
+}
+
+/* Existing CSS */
+
+/* Media Query for Tablets and Mobile Devices */
+@media (max-width: 768px) {
+  .toolbar {
+    height: auto; /* Adjust height as needed */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    padding: 10px; /* Adjust padding for better spacing */
+  }
+
+  .title-tag {
+    margin-bottom: 10px; /* Add space between logo and text */
+  }
+
+  .links {
+    margin: 5px 0; /* Add space between links */
+  }
+
+  .spacer, .space {
+    display: none; /* Hide spacers on smaller screens */
+  }
+
+  .main-content {
+    padding-top: 60px; /* Adjust padding for toolbar */
+  }
+
+  .search-container {
+    flex-direction: column; /* Stack inputs vertically */
+    justify-content: center; /* Center items vertically */
+    padding: 20px; /* Add padding for better spacing */
+    position: static; /* Remove absolute positioning */
+    left: auto; /* Remove left positioning */
+    top: auto; /* Remove top positioning */
+    width: auto; /* Adjust width to fit content */
+    margin-top: 20px; /* Add margin for better spacing */
+  }
+
+  .search-input {
+    margin-bottom: 10px; /* Add space below input */
+  }
+}
+
+/* End of Media Query */

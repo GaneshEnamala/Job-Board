@@ -82,3 +82,59 @@
   opacity: 0.8;
 }
 
+/* Existing CSS */
+
+/* Media Query for Tablets and Mobile Devices */
+@media (max-width: 768px) {
+  .job-card-container {
+    margin-right: 1%; /* Adjust margin for better alignment */
+    width: 70%; /* Adjust width to fit smaller screens */
+    margin-top: 20%;
+  }
+
+  .allJobs {
+    margin-left: 0; /* Reset margin */
+    font-size: large; /* Adjust font size */
+    text-align: center; /* Center text */
+    margin-top: 12%;
+  }
+
+  .job-card {
+    display: flex;
+    flex-direction: column; /* Stack card contents vertically */
+    margin-left: 0; /* Reset margin */
+    width: 100%; /* Full width for mobile */
+    padding: 15px; /* Adjust padding for better spacing */
+    margin-bottom: 15px; /* Adjust margin bottom for better spacing */
+  }
+
+  .company-logo {
+    width: 20%; /* Adjust logo size for better visibility */
+    margin-right: 0; /* Reset margin */
+    margin-bottom: 20px; /* Add margin bottom for spacing */
+  }
+
+  .job-title {
+    font-size: 16px; /* Adjust font size */
+    text-align: center; /* Center text */
+  }
+
+  .job-company-location {
+    font-size: 14px; /* Adjust font size */
+    text-align: center; /* Center text */
+    position: static; /* Reset position */
+    margin-bottom: 5px; /* Add margin bottom for spacing */
+  }
+
+  .view-job-button {
+    display: block; /* Display button for mobile */
+    position: static; /* Reset position */
+    margin: 10px auto 0; /* Adjust margin for centering */
+  }
+
+  .load-more-button {
+    margin: 0 auto; /* Center button */
+  }
+}
+
+/* End of Media Query */
