@@ -1,5 +1,6 @@
 :host {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
   color: #333;
   box-sizing: border-box;
@@ -15,33 +16,35 @@
   height: 70px;
   display: flex;
   align-items: center;
-  justify-content: start; /* Align items to the left */
-  background-color: #1976d2;
-  color: white;
-  font-weight: bold; /* changed from 1000 to bold for better cross-browser compatibility */
+  justify-content: start;
+  background-color: black;
+  color: #1976d2;
+  font-weight: bold;
   font-size: large;
-  padding: 0 20px; /* Added padding for better spacing */
+  padding: 0 20px;
 }
 
 .toolbar img {
-  width: 40px; /* Image size */
-  vertical-align: middle; /* Align the image vertically with text */
-  margin-right: 10px; /* Space between the image and the text */
+  width: 150px;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 .title-tag {
-  display: inline-flex; /* Align image and text side by side */
-  align-items: center; /* Center align image and text vertically */
+  display: inline-flex;
+  align-items: center;
   color: white;
   text-decoration: none;
 }
 
-.spacer, .space {
-  flex-grow: 0.3; /* Adjust flex-grow to push navigation to the right */
+.spacer,
+.space {
+  flex-grow: 0.3;
 }
 
 .links {
-  margin: 0 10px; /* Consistent margin around links */
+  margin: 0 10px;
+  /* color: #1976d2; */
   color: white;
   text-decoration: none;
 }
@@ -51,48 +54,65 @@
 }
 
 .main-content {
-  padding-top: 80px; /* Adjust according to the height of your toolbar */
-  text-align: center; /* Centers the text */
-  width: 100%; /* Ensure it takes full width */
-  min-height: calc(100vh - 80px); /* Subtract the toolbar height from the viewport height */
-  box-sizing: border-box; /* Includes padding in height calculation */
+  padding-top: 80px;
+  text-align: center;
+  /* width: 100%; */
+  min-height: calc(100vh - 290px);
+  box-sizing: border-box;
+  background-color: aliceblue;
 }
 
-.search-container {
-  display: flex;
-  justify-content: center; /* Center the contents horizontally */
-  padding: 20px;
-  position: absolute;
-  left: 400px;
-  top: 200px;
-  background-color: #e12424; /* A light background for the search area */
+/* Footer Styles */
+footer {
+  /* background-color: #f8f8f8; Set background color for the footer */
+  padding: 20px 0; /* Add some padding */
+  text-align: center; /* Center the content */
 }
 
-.search-input {
-  padding: 10px;
-  margin-right: 10px; /* Space between inputs and the button */
-  border: 2px solid #1976d2; /* Border color to match the toolbar */
-  border-radius: 5px; /* Rounded corners for the input fields */
-  font-size: 16px; /* Larger text for better readability */
-  width: 200px; /* Fixed width, adjust as needed */
+.footer-content {
+  display: flex; /* Use flexbox to align items */
+  justify-content: center; /* Center the items horizontally */
+  flex-wrap: wrap; /* Allow items to wrap if they exceed the width */
 }
-
-.search-button {
-  padding: 10px 20px;
-  background-color: #1976d2; /* Matching the toolbar's color */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer; /* Cursor changes to pointer when hovered */
-  font-size: 16px;
+.footer-links span,
+.footer-social span{
   font-weight: bold;
 }
-
-.search-button:hover {
-  background-color: #145ca8; /* Slightly darker on hover for better UI interaction */
+.footer-links,
+.footer-social {
+  flex: 1; /* Make both sections grow to fill available space */
+  margin: 10px; /* Add some margin between sections */
 }
 
-/* Existing CSS */
+.footer-bottom {
+  margin-top: 10px; /* Add some space between content and bottom text */
+}
+
+ul {
+  list-style: none; /* Remove bullet points from lists */
+  padding: 0; /* Remove default padding */
+}
+
+.footer-links ul li,
+.footer-social ul li {
+  margin-bottom: 5px; /* Add some space between list items */
+}
+
+.footer-links ul li a,
+.footer-bottom p
+{
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-social img {
+  width: 30px; /* Adjust image size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.footer-social{
+  flex-direction: row;
+}
 
 /* Media Query for Tablets and Mobile Devices */
 @media (max-width: 768px) {
@@ -111,28 +131,13 @@
     margin: 5px 0; /* Add space between links */
   }
 
-  .spacer, .space {
+  .spacer,
+  .space {
     display: none; /* Hide spacers on smaller screens */
   }
 
   .main-content {
     padding-top: 60px; /* Adjust padding for toolbar */
   }
-
-  .search-container {
-    flex-direction: column; /* Stack inputs vertically */
-    justify-content: center; /* Center items vertically */
-    padding: 20px; /* Add padding for better spacing */
-    position: static; /* Remove absolute positioning */
-    left: auto; /* Remove left positioning */
-    top: auto; /* Remove top positioning */
-    width: auto; /* Adjust width to fit content */
-    margin-top: 20px; /* Add margin for better spacing */
-  }
-
-  .search-input {
-    margin-bottom: 10px; /* Add space below input */
-  }
 }
-
 /* End of Media Query */

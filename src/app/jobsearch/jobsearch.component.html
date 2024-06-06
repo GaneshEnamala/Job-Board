@@ -1,0 +1,16 @@
+<h1>Job Search</h1>
+<form [formGroup]="jobSearch" id="job-search-form" (ngSubmit)="searchJob()">
+  <div class="input-row-wrapper">
+    <div class="input-row">
+      <label for="keywords">Keywords or Skills:</label>
+      <input type="text" id="keywords" formControlName="keywords" placeholder="e.g., Web Developer, Data Scientist">
+    </div>
+    <div class="input-row">
+      <label for="location">Location:</label>
+      <input type="text" id="location" formControlName="location" placeholder="e.g., Remote, New York City">
+    </div>
+    <div class="input-row button-row">
+      <button type="submit">Search Jobs</button>
+    </div>
+  </div>
+</form>

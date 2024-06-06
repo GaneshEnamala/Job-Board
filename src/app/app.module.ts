@@ -6,6 +6,10 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { CompaniesComponent } from './components/companies/companies.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ViewJobComponent } from './components/view-job/view-job.component';
+import { HttpClientModule } from '@angular/common/http'; 
+import { SafeHtmlPipe } from './services/SafeHtmlPipe';
+import { JobsearchComponent } from './jobsearch/jobsearch.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,11 +17,15 @@ import { ViewJobComponent } from './components/view-job/view-job.component';
     JobsComponent,
     CompaniesComponent,
     AboutusComponent,
-    ViewJobComponent
+    ViewJobComponent,
+    SafeHtmlPipe,
+    JobsearchComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

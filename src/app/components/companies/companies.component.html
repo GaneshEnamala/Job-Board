@@ -1,16 +1,16 @@
-<h1>Companies</h1>
+<h1>All Companies</h1>
 <div class="controls">
   <button (click)="toggleSortDirection()">
-    Sort: {{ sortDirection === 'asc' ? 'Ascending' : 'Descending' }}
+    Sort: {{ sortDirection === 'asc' ? 'A-Z' : 'Z-A' }}
   </button>
   <input type="text" placeholder="Search company..." (input)="onSearchChange($event)">
 </div>
 <div class="card-container">
-  <div *ngFor="let company of filteredJobs" class="company-card">
-    <img [src]="company.logo" alt="logo" class="company-logo">
+  <div *ngFor="let company of filteredCompanies" class="company-card" (click)="getCompanyJobs(company.companyName)">
+    <img [src]="company.companyLogo" alt="logo" class="company-logo">
     <div class="company-details">
-      <div class="company-name">{{ company.companyName }}</div>
-      <div class="job-count">{{ company.count }} job{{ company.count > 1 ? 's' : '' }}</div>
+      <div class="company-name">{{company.companyName}}</div>
+      <div class="job-count">{{ company.jobCount }} job{{ company.jobCount > 1 ? 's' : '' }}</div>
     </div>
   </div>
 </div>

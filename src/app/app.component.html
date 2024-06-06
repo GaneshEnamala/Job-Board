@@ -1,8 +1,9 @@
 <div class="toolbar" role="banner">
   <div class="space"></div>
   <a routerLink="/" class="title-tag">
-    <img src="../../assets/images/job-board-2.png" />
-    Job-Board</a>
+    <img src="../../assets/images/coollogo.png" />
+   <!-- <p style="color: white;">Ctrl</p> <p style="color: rgb(227, 12, 12);">+</p><p style="color: rgb(82, 221, 82);">Hired</p> -->
+  </a>
   <div class="spacer"></div>
   <a routerLink="/jobs" class="links">
     Jobs
@@ -15,11 +16,34 @@
   </a>
 </div>
 <div class="main-content">
-  <router-outlet></router-outlet> <!-- Angular Router Outlet -->
+  <router-outlet></router-outlet>
+  <app-jobsearch></app-jobsearch>
 </div>
 
-<!-- <div class="search-container">
-  <input type="text" placeholder="Keyword or skills" class="search-input">
-  <input type="text" placeholder="Location" class="search-input">
-  <button class="search-button">Search</button>
-</div> -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-links">
+      <span>Services</span>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/jobs">Jobs</a></li>
+        <li><a href="/companies">Companies</a></li>
+        <li><a href="/aboutus">About Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <span>Follow us on</span>
+      <ul>
+        <li><a href="#"><img src="https://d2x33it9a58aqn.cloudfront.net/images/fb.svg?60f610889539978e421b1238e5b7d4f8"
+              alt="Facebook"></a></li>
+        <li><a href="#"><img src="https://d2x33it9a58aqn.cloudfront.net/images/tw.svg?cbe99b7e72ffe99e3ebcfd9c8c2db52e"
+              alt="Twitter"></a></li>
+        <li><a href="#"><img src="https://d2x33it9a58aqn.cloudfront.net/images/in.svg?0f3bc4cc4766c902551468d50b8956b9"
+              alt="LinkedIn"></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 Job-Board. All rights reserved.</p>
+  </div>
+</footer>

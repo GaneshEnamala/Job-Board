@@ -1,5 +1,5 @@
 <div class="job-card-container">
-  <p class="allJobs">All Jobs</p>
+  <p class="allJobs">{{jobsType}}</p>
   <ng-container *ngFor="let job of jobs">
     <div class="job-card" (click)="viewJobDetails(job)">
       <img [src]="job.companyLogo" alt="Company Logo" class="company-logo">
@@ -11,5 +11,5 @@
       <button class="view-job-button" (click)="viewJobDetails(job)">View Job</button>
     </div>    
   </ng-container>
-  <button class="load-more-button" (click)="loadJobs()">Load More Jobs</button>
+  <button class="load-more-button" (click)="loadJobs()" [disabled]="!loadMore">Load More Jobs</button>
 </div>

@@ -1,104 +1,59 @@
 import { Component, OnInit } from '@angular/core';
-import { Job } from 'src/app/model/Job.model';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CompanyDetails } from 'src/app/model/CompanyDetails';
+import { JobServiceService } from 'src/app/services/job-service.service';
 
-interface CompanyJob {
-  companyName: string;
-  logo: string;
-  count: number;
-}
 @Component({
   selector: 'app-companies',
   templateUrl: './companies.component.html',
   styleUrls: ['./companies.component.css'],
 })
 export class CompaniesComponent implements OnInit {
+  constructor(
+    private jobService: JobServiceService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
-  exampleJobs: Job[] = [
-    {
-      title: 'Full Stack Engineer',
-      location: 'New York, NY',
-      companyLogo:
-        'https://jboardio.s3-us-west-1.amazonaws.com/default/employers/apple.png',
-      companyName: 'Apple',
-      departments: ['Engineering', 'IT'],
-    },
-    {
-      title: 'Software Developer',
-      location: 'Hyderabad, India',
-      companyLogo:
-        'https://d3535lqr6sqxto.cloudfront.net/employers/o8Ejh819omNX8njlQTbhst6Lacg6Kp0YSV3NF1Op.jpeg',
-      companyName: 'Spotify',
-      departments: ['Engineering', 'IT'],
-    },
-
-    {
-      title: 'Network Engineer, Wireless Connectivity Deployment ',
-      location: 'Hyderabad, India',
-      companyLogo:
-        'https://d3535lqr6sqxto.cloudfront.net/employers/yguknWBnH1l3IL9xi3hcQxCywT3IUrEpHRgOJN3s.jpeg',
-      companyName: 'Meta',
-      departments: ['Internship'],
-    },
-    {
-      title: 'Senior Software Engineer, Production Media Engineering',
-      location: 'Hyderabad, India',
-      companyLogo:
-        'https://jboardio.s3-us-west-1.amazonaws.com/default/employers/netflix.png',
-      companyName: 'Netflix',
-      departments: ['Internship'],
-    },
-    {
-      title: 'Data Scientist, Global Supply Chain',
-      location: 'Seattle, USA',
-      companyLogo:
-        'https://d3535lqr6sqxto.cloudfront.net/employers/xo6QERcPGq8kj6qQIFvhsSxaemApQSdNjq7eAAeL.png',
-      companyName: 'Starbucks',
-      departments: ['Part-time'],
-    },
-  ];
-  
-  companyJobs: CompanyJob[] = [];
-  filteredJobs: CompanyJob[] = [];
-  sortDirection: 'asc' | 'desc' = 'asc'; // default sorting
+  allCompanies: CompanyDetails[] = []; // Store all companies
+  filteredCompanies: CompanyDetails[] = [];
+  sortDirection: 'asc' | 'desc' = 'asc';
   filterText: string = '';
 
   ngOnInit() {
-    this.processJobs();
-    this.updateList();
+    this.getAllCompanies();
   }
 
-  processJobs() {
-    const companyMap = new Map();
-
-    for (const job of this.exampleJobs) {
-      if (companyMap.has(job.companyName)) {
-        companyMap.get(job.companyName).count += 1;
-      } else {
-        companyMap.set(job.companyName, {
-          logo: job.companyLogo,
-          count: 1
-        });
+  getAllCompanies() {
+    this.jobService.getAllCompanyDetails().subscribe(
+      (companyDetails: CompanyDetails[]) => {
+        this.allCompanies = companyDetails; // Assign all companies
+        this.updateList(); // Initially display all companies
+        document.title = 'All Companies - Ctrl+Hired';
+      },
+      (error) => {
+        console.error('Error fetching company details:', error);
       }
-    }
-
-    this.companyJobs = Array.from(companyMap, ([companyName, data]) => ({
-      companyName,
-      logo: data.logo,
-      count: data.count
-    }));
+    );
   }
 
   updateList() {
-    this.sortCompanies();
-    this.filteredJobs = this.companyJobs.filter(job => 
-      job.companyName.toLowerCase().includes(this.filterText.toLowerCase()));
+    // Apply filtering to the original list of companies
+    this.filteredCompanies = this.allCompanies.filter((company) =>
+      company.companyName.toLowerCase().includes(this.filterText.toLowerCase())
+    );
+    this.sortCompanies(); // Apply sorting to the filtered list
   }
 
   sortCompanies() {
     if (this.sortDirection === 'asc') {
-      this.companyJobs.sort((a, b) => a.companyName.localeCompare(b.companyName));
+      this.filteredCompanies.sort((a, b) =>
+        a.companyName.localeCompare(b.companyName)
+      );
     } else {
-      this.companyJobs.sort((a, b) => b.companyName.localeCompare(a.companyName));
+      this.filteredCompanies.sort((a, b) =>
+        b.companyName.localeCompare(a.companyName)
+      );
     }
   }
 
@@ -113,5 +68,9 @@ export class CompaniesComponent implements OnInit {
       this.filterText = target.value;
       this.updateList();
     }
-  }  
+  }
+
+  getCompanyJobs(companyName: string) {
+    this.router.navigate(['/company/', companyName]);
+  }
 }
